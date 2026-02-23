@@ -13,7 +13,7 @@
             --line-color: #1a1a1a;
             --erina-color: #cd84f1; /* 绘里奈主色：紫色 */
             --ayane-color: #feca57;  /* 绾音主色：黄色 */
-            --itsuwa-color: #B2E0D6;  /* 伊都羽主色：绿色 */
+            --Itsuwa-color: #B2E0D6;  /* 伊都羽主色：绿色 */
             --accent-yellow: #feca57;
             --accent-purple: #cd84f1;
             --accent-cyan: #7efff5;
@@ -1297,7 +1297,7 @@
             const isPlaying = !this.audio.paused;
             const progress = (this.audio.currentTime / this.audio.duration) * 100 || 0;
 
-            ['erina', 'AYANE','Miwa Itsuwa'].forEach(id => {
+            ['erina', 'AYANE','Itsuwa'].forEach(id => {
                 const btn = document.getElementById(`btn-${id}`);
                 const bar = document.getElementById(`bar-${id}`);
 
