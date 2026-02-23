@@ -13,6 +13,7 @@
             --line-color: #1a1a1a;
             --erina-color: #cd84f1; /* 绘里奈主色：紫色 */
             --ayane-color: #feca57;  /* 绾音主色：黄色 */
+            --itsuwa-color: #B2E0D6;  /* 伊都羽主色：绿色 */
             --accent-yellow: #feca57;
             --accent-purple: #cd84f1;
             --accent-cyan: #7efff5;
@@ -176,6 +177,9 @@
         .card-AYANE .status-strip { background: var(--ayane-color); color: #000; }
         .card-AYANE .rank-badge { color: var(--ayane-color); }
         .card-AYANE .mini-fill { background: var(--ayane-color); }
+        .card-Itsuwa .status-strip { background: var(--Itsuwa-color); }
+        .card-Itsuwa .rank-badge { color: var(--Itsuwa-color); }
+        .card-Itsuwa .mini-fill { background: var(--Itsuwa-color); }
         .card-locked { opacity: 0.6; filter: grayscale(1); display: flex; }
 
         /* ========== TAB 2: MIND SCAN ========== */
@@ -214,10 +218,13 @@
         .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
         .theme-erina { --theme-color: #cd84f1; }
         .theme-AYANE { --theme-color: #feca57; }
+        .theme-Itsuwa {--theme-color: #B2E0D6;}
         .theme-erina .face-inner { background: linear-gradient(135deg, #f8f0ff 0%, #f0e6ff 100%); }
         .theme-AYANE .face-inner { background: linear-gradient(135deg, #fff9e6 0%, #fff4d1 100%); }
+        .theme-Itsuwa .face-inner {background: linear-gradient(135deg, #e0f7f0 0%, #cceae5 100%); }
         .theme-erina .val { color: var(--erina-color); }
         .theme-AYANE .val { color: var(--ayane-color); }
+        .theme-Itsuwa .val {color: var(--itsuwa-color); }
 
         /* ========== TAB 3: CHAT ========== */
         /* Chat List */
@@ -669,6 +676,30 @@
             --scale: 1.9;
             height: 140%;
             filter: drop-shadow(8px 8px 0px rgba(184,134,11,0.2));
+            animation: breathe 5s ease-in-out infinite;
+        }
+
+        /* Desktop Override (Inside Media Query at bottom of file) -> See .page-AYANE .char-img in @media block */
+
+
+        /* --- 3. Itsuwa (三轮伊都羽) --- */
+        
+        /* Unified Desktop Style */ 
+        .page-Itsuwa .char-img-business {
+            --off-x: 0%;
+            --off-y: 60%;
+            --rotate: 0deg;
+            --scale: 1.7;
+            height: 110%;
+        }
+        /* Unified Desktop Style */
+        .page-Itsuwa .char-img-private {
+            --off-x: 0%;
+            --off-y: 60%;
+            --rotate: 0deg;
+            --scale: 1.7;
+            height: 110%;
+            filter: drop-shadow(8px 8px 0px rgba(178,224,214,0.2));
             animation: breathe 5s ease-in-out infinite;
         }
 
@@ -1371,7 +1402,7 @@
                 "$消息记录": {
                     "2026-01-01 00:00_01": { "发送者": "伊都羽", "文字内容": "新年快乐哥哥！今年也要陪着我哦！", "类型": "文字消息" },
                     "2026-02-02 09:00_02": { "发送者": "user", "文字内容": "要出去走走吗？", "类型": "文字消息" },
-                    "2026-02-02 09:15_03": { "发送者": "林绛", "文字内容": "欸？哥哥想出去走走吗？等我一下啦，我要收拾一下才行啦。", "类型": "语音", "时长": 8 }
+                    "2026-02-02 09:15_03": { "发送者": "伊都羽", "文字内容": "欸？哥哥想出去走走吗？等我一下啦，我要收拾一下才行啦。", "类型": "语音", "时长": 8 }
                 }
             },
             "$三人群组": {
@@ -1498,8 +1529,8 @@
                 avatar: 'https://cdn.jsdelivr.net/gh/muyuanyu/-@main/IMG_20260223_210426.png',
                 hero: '...',
                 heroOutside: 'https://cdn.jsdelivr.net/gh/muyuanyu/-@main/IMG_20260223_210426.png',
-                heroInside: 'https://cdn.jsdelivr.net/gh/muyuanyu/-@main/%E4%B8%89%E8%BD%AE%E4%BC%8A%E9%83%BD%E7%BE%BD%E6%97%A7.png',
-                themeClass: 'theme-AYANE',
+                heroInside: 'https://cdn.jsdelivr.net/gh/muyuanyu/-@main/IMG_20260223_210426.png',
+                themeClass: 'theme-Itsuwa',
                 styleClass: 'style-AYANE',
                 color: '#B2E0D6',
                 rank: 'FAMILY',
@@ -1594,7 +1625,7 @@
                 rentDb[char.id] = {
                     ...char.rentInfo,
                     id: char.id,
-                    name: char.id === 'erina' ? 'Erina' : char.id === 'AYANE' ? 'Ayane' : 'Miwa', // Keep short name for internal use
+                    name: char.id === 'erina' ? 'Erina' : char.id === 'AYANE' ? 'Ayane' : 'Itsuwa', // Keep short name for internal use
                     fullName: char.fullName,
                     hero: char.hero,
                     avatar: char.avatar,
